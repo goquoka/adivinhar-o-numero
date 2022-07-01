@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		Random rand = new Random();
+		
+		System.out.println("digite um numero entre 1 e 50");
+		System.out.println("voce tem 5 tentativas");
+
+		int num = rand.nextInt(50)+1;
+		int guess = 0;
+		int guesses = 5;
+		
+		while(guess != num) {
+			
+			guess = scan.nextInt();
+			guesses++;
+			
+			if(guess < num) {
+				System.out.println("mais alto");			
+			} else if (guess > num) {
+				System.out.println("mais baixo");
+			}
+		}
+		
+		System.out.println("Parabens! voce adivinhou o numero em "   + guesses +  "       suposicoes!");
+	}	
+}
